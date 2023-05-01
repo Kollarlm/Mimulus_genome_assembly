@@ -10,6 +10,9 @@ library(tidyr)
 library(ggmagnify)
 library(ggfx)
 library(rempsyc)
+library(ggpubr)
+library(gridExtra)
+library(ggpmisc)
 
 
 ### Function for reading in .delta file 
@@ -67,119 +70,252 @@ chr14 <- readDelta("./data/pseudochromosome_L1_S1_chr14.mdelta")
 
 ## Plot
 chr1_plot <-  ggplot(chr1, aes(x=rs, xend=re, y=qs, yend=qe, colour=strand)) + geom_segment() +
-  geom_point(alpha=.5) + facet_grid(qid~., scales='free', space='free', switch='y') +
-  theme_bw() + theme(strip.text.y=element_text(angle=180, size=9),
-                     legend.position=c(.99,.01), legend.justification=c(1,0),
-                     strip.background=element_blank(),
-                     axis.text.y=element_text(angle=0, size=9), axis.ticks.y=element_blank()) +
-  xlab('LMC') + ylab('SWB') + scale_colour_brewer(palette='Dark2')
+  geom_point(alpha=.5, size=3) + facet_grid(qid~., scales='free', space='free', switch='y') +
+  theme_bw() + theme(
+    legend.position= c(.99,.01), legend.justification=c(1,0),
+    strip.background=element_blank(),
+    strip.text.y = element_blank(),
+    axis.text.y=element_blank(),
+    axis.text.x=element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold",size=18) ,
+    axis.text = element_blank())+ 
+  scale_colour_brewer(palette='Dark2')+
+  ggtitle("Chromosome 1")
 
 chr2_plot <-  ggplot(chr2, aes(x=rs, xend=re, y=qs, yend=qe, colour=strand)) + geom_segment() +
-  geom_point(alpha=.5) + facet_grid(qid~., scales='free', space='free', switch='y') +
-  theme_bw() + theme(strip.text.y=element_text(angle=180, size=9),
-                     legend.position=c(.99,.01), legend.justification=c(1,0),
-                     strip.background=element_blank(),
-                     axis.text.y=element_text(angle=0, size=9), axis.ticks.y=element_blank()) +
-  xlab('LMC') + ylab('SWB') + scale_colour_brewer(palette='Dark2')
+  geom_point(alpha=.5, size=3) + facet_grid(qid~., scales='free', space='free', switch='y') +
+  theme_bw() + theme(
+    legend.position= c(.99,.01), legend.justification=c(1,0),
+    strip.background=element_blank(),
+    strip.text.y = element_blank(),
+    axis.text.y=element_blank(),
+    axis.text.x=element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold",size=18) ,
+    axis.text = element_blank())+ 
+  scale_colour_brewer(palette='Dark2')+
+  ggtitle("Chromosome 2")
 
-chr3_plot <-  ggplot(chr3, aes(x=rs, xend=re, y=qs, yend=qe, colour=strand)) + geom_segment() +
-  geom_point(alpha=.5) + facet_grid(qid~., scales='free', space='free', switch='y') +
-  theme_bw() + theme(strip.text.y=element_text(angle=180, size=9),
-                     legend.position=c(.99,.01), legend.justification=c(1,0),
-                     strip.background=element_blank(),
-                     axis.text.y=element_text(angle=0, size=9), axis.ticks.y=element_blank()) +
-  xlab('LMC') + ylab('SWB') + scale_colour_brewer(palette='Dark2')
+chr3_plot <-  ggplot(chr3,aes(x=rs, xend=re, y=qs, yend=qe, colour=strand)) + geom_segment() +
+  geom_point(alpha=.5, size=3) + facet_grid(qid~., scales='free', space='free', switch='y') +
+  theme_bw() + theme(
+    legend.position= c(.99,.01), legend.justification=c(1,0),
+    strip.background=element_blank(),
+    strip.text.y = element_blank(),
+    axis.text.y=element_blank(),
+    axis.text.x=element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold",size=18) ,
+    axis.text = element_blank())+ 
+  scale_colour_brewer(palette='Dark2')+
+  ggtitle("Chromosome 3")
 
 chr4_plot <-  ggplot(chr4, aes(x=rs, xend=re, y=qs, yend=qe, colour=strand)) + geom_segment() +
-  geom_point(alpha=.5) + facet_grid(qid~., scales='free', space='free', switch='y') +
-  theme_bw() + theme(strip.text.y=element_text(angle=180, size=9),
-                     legend.position=c(.99,.01), legend.justification=c(1,0),
-                     strip.background=element_blank(),
-                     axis.text.y=element_text(angle=0, size=9), axis.ticks.y=element_blank()) +
-  xlab('LMC') + ylab('SWB') + scale_colour_brewer(palette='Dark2')
+  geom_point(alpha=.5, size=3) + facet_grid(qid~., scales='free', space='free', switch='y') +
+  theme_bw() + theme(
+    legend.position= c(.99,.01), legend.justification=c(1,0),
+    strip.background=element_blank(),
+    strip.text.y = element_blank(),
+    axis.text.y=element_blank(),
+    axis.text.x=element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold",size=18) ,
+    axis.text = element_blank())+ 
+  scale_colour_brewer(palette='Dark2')+
+  ggtitle("Chromosome 4")
 
 chr5_plot <-  ggplot(chr5, aes(x=rs, xend=re, y=qs, yend=qe, colour=strand)) + geom_segment() +
-  geom_point(alpha=.5) + facet_grid(qid~., scales='free', space='free', switch='y') +
-  theme_bw() + theme(strip.text.y=element_text(angle=180, size=9),
-                     legend.position=c(.99,.01), legend.justification=c(1,0),
-                     strip.background=element_blank(),
-                     axis.text.y=element_text(angle=0, size=9), axis.ticks.y=element_blank()) +
-  xlab('LMC') + ylab('SWB') + scale_colour_brewer(palette='Dark2')
+  geom_point(alpha=.5, size=3) + facet_grid(qid~., scales='free', space='free', switch='y') +
+  theme_bw() + theme(
+                    legend.position= c(.99,.01), legend.justification=c(1,0),
+                    strip.background=element_blank(),
+                    strip.text.y = element_blank(),
+                     axis.text.y=element_blank(),
+                     axis.text.x=element_blank(),
+                     axis.title.x = element_blank(),
+                    axis.ticks = element_blank(),
+                    axis.title = element_blank(),
+                    plot.title = element_text(hjust = 0.5, face = "bold",size=18) ,
+                    axis.text = element_blank())+ 
+  scale_colour_brewer(palette='Dark2')+
+  ggtitle("Chromosome 5")
 
 chr6_plot <-  ggplot(chr6, aes(x=rs, xend=re, y=qs, yend=qe, colour=strand)) + geom_segment() +
-  geom_point(alpha=.5) + facet_grid(qid~., scales='free', space='free', switch='y') +
-  theme_bw() + theme(strip.text.y=element_text(angle=180, size=9),
-                     legend.position=c(.99,.01), legend.justification=c(1,0),
-                     strip.background=element_blank(),
-                     axis.text.y=element_text(angle=0, size=9), axis.ticks.y=element_blank()) +
-  xlab('LMC') + ylab('SWB') + scale_colour_brewer(palette='Dark2')
+  geom_point(alpha=.5, size=3) + facet_grid(qid~., scales='free', space='free', switch='y') +
+  theme_bw() + theme(
+    legend.position= c(.99,.01), legend.justification=c(1,0),
+    strip.background=element_blank(),
+    strip.text.y = element_blank(),
+    axis.text.y=element_blank(),
+    axis.text.x=element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold",size=18) ,
+    axis.text = element_blank())+ 
+  scale_colour_brewer(palette='Dark2')+
+  ggtitle("Chromosome 6")
 
 chr7_plot <-  ggplot(chr7, aes(x=rs, xend=re, y=qs, yend=qe, colour=strand)) + geom_segment() +
-  geom_point(alpha=.5) + facet_grid(qid~., scales='free', space='free', switch='y') +
-  theme_bw() + theme(strip.text.y=element_text(angle=180, size=9),
-                     legend.position=c(.99,.01), legend.justification=c(1,0),
-                     strip.background=element_blank(),
-                     axis.text.y=element_text(angle=0, size=9), axis.ticks.y=element_blank()) +
-  xlab('LMC') + ylab('SWB') + scale_colour_brewer(palette='Dark2')
+  geom_point(alpha=.5, size=3) + facet_grid(qid~., scales='free', space='free', switch='y') +
+  theme_bw() + theme(
+    legend.position= c(.99,.01), legend.justification=c(1,0),
+    strip.background=element_blank(),
+    strip.text.y = element_blank(),
+    axis.text.y=element_blank(),
+    axis.text.x=element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold",size=18) ,
+    axis.text = element_blank())+ 
+  scale_colour_brewer(palette='Dark2')+
+  ggtitle("Chromosome 7")
 
 chr8_plot <-  ggplot(chr8, aes(x=rs, xend=re, y=qs, yend=qe, colour=strand)) + geom_segment() +
-  geom_point(alpha=.5) + facet_grid(qid~., scales='free', space='free', switch='y') +
-  theme_bw() + theme(strip.text.y=element_text(angle=180, size=9),
-                     legend.position=c(.99,.01), legend.justification=c(1,0),
-                     strip.background=element_blank(),
-                     axis.text.y=element_text(angle=0, size=9), axis.ticks.y=element_blank()) +
-  xlab('LMC') + ylab('SWB') + scale_colour_brewer(palette='Dark2')
-ggmagnify(chr8_plot, ylim = c(5000000,7163731), xlim = c(715660,1449416),
+  geom_point(alpha=.5, size=3) + facet_grid(qid~., scales='free', space='free', switch='y') +
+  theme_bw() + theme(
+    legend.position= c(.99,.01), legend.justification=c(1,0),
+    strip.background=element_blank(),
+    strip.text.y = element_blank(),
+    axis.text.y=element_blank(),
+    axis.text.x=element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold",size=18) ,
+    axis.text = element_blank())+ 
+  scale_colour_brewer(palette='Dark2')+
+  ggtitle("Chromosome 8")
+
+chr8_plot2 <-ggmagnify(chr8_plot, ylim = c(5000000,7163731), xlim = c(715660,1449416),
           inset_xlim = c(10, 8000000), inset_ylim = c(10000000, 20000000), axes = FALSE,
           border = TRUE, shadow = TRUE)
 
 chr9_plot <-  ggplot(chr9, aes(x=rs, xend=re, y=qs, yend=qe, colour=strand)) + geom_segment() +
-  geom_point(alpha=.5) + facet_grid(qid~., scales='free', space='free', switch='y') +
-  theme_bw() + theme(strip.text.y=element_text(angle=180, size=9),
-                     legend.position=c(.99,.01), legend.justification=c(1,0),
-                     strip.background=element_blank(),
-                     axis.text.y=element_text(angle=0, size=9), axis.ticks.y=element_blank()) +
-  xlab('LMC') + ylab('SWB') + scale_colour_brewer(palette='Dark2')
+  geom_point(alpha=.5, size=3) + facet_grid(qid~., scales='free', space='free', switch='y') +
+  theme_bw() + theme(
+    legend.position= c(.99,.01), legend.justification=c(1,0),
+    strip.background=element_blank(),
+    strip.text.y = element_blank(),
+    axis.text.y=element_blank(),
+    axis.text.x=element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold",size=18) ,
+    axis.text = element_blank())+ 
+  scale_colour_brewer(palette='Dark2')+
+  ggtitle("Chromosome 9")
 
 chr10_plot <-  ggplot(chr10, aes(x=rs, xend=re, y=qs, yend=qe, colour=strand)) + geom_segment() +
-  geom_point(alpha=.5) + facet_grid(qid~., scales='free', space='free', switch='y') +
-  theme_bw() + theme(strip.text.y=element_text(angle=180, size=9),
-                     legend.position=c(.99,.01), legend.justification=c(1,0),
-                     strip.background=element_blank(),
-                     axis.text.y=element_text(angle=0, size=9), axis.ticks.y=element_blank()) +
-  xlab('LMC') + ylab('SWB') + scale_colour_brewer(palette='Dark2')
+  geom_point(alpha=.5, size=3) + facet_grid(qid~., scales='free', space='free', switch='y') +
+  theme_bw() + theme(
+    legend.position= c(.99,.01), legend.justification=c(1,0),
+    strip.background=element_blank(),
+    strip.text.y = element_blank(),
+    axis.text.y=element_blank(),
+    axis.text.x=element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold",size=18) ,
+    axis.text = element_blank())+ 
+  scale_colour_brewer(palette='Dark2')+
+  ggtitle("Chromosome 10")
 
 chr11_plot <-  ggplot(chr11, aes(x=rs, xend=re, y=qs, yend=qe, colour=strand)) + geom_segment() +
-  geom_point(alpha=.5) + facet_grid(qid~., scales='free', space='free', switch='y') +
-  theme_bw() + theme(strip.text.y=element_text(angle=180, size=9),
-                     legend.position=c(.99,.01), legend.justification=c(1,0),
-                     strip.background=element_blank(),
-                     axis.text.y=element_text(angle=0, size=9), axis.ticks.y=element_blank()) +
-  xlab('LMC') + ylab('SWB') + scale_colour_brewer(palette='Dark2')
+  geom_point(alpha=.5, size=3) + facet_grid(qid~., scales='free', space='free', switch='y') +
+  theme_bw() + theme(
+    legend.position= c(.99,.01), legend.justification=c(1,0),
+    strip.background=element_blank(),
+    strip.text.y = element_blank(),
+    axis.text.y=element_blank(),
+    axis.text.x=element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold",size=18) ,
+    axis.text = element_blank())+ 
+  scale_colour_brewer(palette='Dark2')+
+  ggtitle("Chromosome 11")
 
 chr12_plot <-  ggplot(chr12, aes(x=rs, xend=re, y=qs, yend=qe, colour=strand)) + geom_segment() +
-  geom_point(alpha=.5) + facet_grid(qid~., scales='free', space='free', switch='y') +
-  theme_bw() + theme(strip.text.y=element_text(angle=180, size=9),
-                     legend.position=c(.99,.01), legend.justification=c(1,0),
-                     strip.background=element_blank(),
-                     axis.text.y=element_text(angle=0, size=9), axis.ticks.y=element_blank()) +
-  xlab('LMC') + ylab('SWB') + scale_colour_brewer(palette='Dark2')
+  geom_point(alpha=.5, size=3) + facet_grid(qid~., scales='free', space='free', switch='y') +
+  theme_bw() + theme(
+    legend.position= c(.99,.01), legend.justification=c(1,0),
+    strip.background=element_blank(),
+    strip.text.y = element_blank(),
+    axis.text.y=element_blank(),
+    axis.text.x=element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold",size=18) ,
+    axis.text = element_blank())+ 
+  scale_colour_brewer(palette='Dark2')+
+  ggtitle("Chromosome 12")
 
 chr13_plot <-  ggplot(chr13, aes(x=rs, xend=re, y=qs, yend=qe, colour=strand)) + geom_segment() +
-  geom_point(alpha=.5) + facet_grid(qid~., scales='free', space='free', switch='y') +
-  theme_bw() + theme(strip.text.y=element_text(angle=180, size=9),
-                     legend.position=c(.99,.01), legend.justification=c(1,0),
-                     strip.background=element_blank(),
-                     axis.text.y=element_text(angle=0, size=9), axis.ticks.y=element_blank()) +
-  xlab('LMC') + ylab('SWB') + scale_colour_brewer(palette='Dark2')
+  geom_point(alpha=.5, size=3) + facet_grid(qid~., scales='free', space='free', switch='y') +
+  theme_bw() + theme(
+    legend.position= c(.99,.01), legend.justification=c(1,0),
+    strip.background=element_blank(),
+    strip.text.y = element_blank(),
+    axis.text.y=element_blank(),
+    axis.text.x=element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold",size=18) ,
+    axis.text = element_blank())+ 
+  scale_colour_brewer(palette='Dark2')+
+  ggtitle("Chromosome 13")
 
 chr14_plot <-  ggplot(chr14, aes(x=rs, xend=re, y=qs, yend=qe, colour=strand)) + geom_segment() +
-  geom_point(alpha=.5) + facet_grid(qid~., scales='free', space='free', switch='y') +
-  theme_bw() + theme(strip.text.y=element_text(angle=180, size=9),
-                     legend.position=c(.99,.01), legend.justification=c(1,0),
-                     strip.background=element_blank(),
-                     axis.text.y=element_text(angle=0, size=9), axis.ticks.y=element_blank()) +
-  xlab('LMC') + ylab('SWB') + scale_colour_brewer(palette='Dark2')
+  geom_point(alpha=.5, size=3) + facet_grid(qid~., scales='free', space='free', switch='y') +
+  theme_bw() + theme(
+    legend.position= c(.99,.01), legend.justification=c(1,0),
+    strip.background=element_blank(),
+    strip.text.y = element_blank(),
+    axis.text.y=element_blank(),
+    axis.text.x=element_blank(),
+    axis.title.x = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(hjust = 0.5, face = "bold",size=18) ,
+    axis.text = element_blank())+ 
+  scale_colour_brewer(palette='Dark2')+
+  ggtitle("Chromosome 14")
 
-## 
+# ggarrange all of the ggplots into a single figure
+chrplots <- ggarrange(chr1_plot, chr2_plot, chr3_plot, chr4_plot, chr5_plot, chr6_plot,
+          chr7_plot, chr8_plot, chr9_plot, chr10_plot, chr11_plot, chr12_plot,
+          chr13_plot, chr14_plot, nrow = 3, ncol = 5, common.legend = TRUE)
 
+jpeg("./ggplot_figures/chromosomes_figure1.jpg", height = 800, width=800)
+chrplots
+dev.off()
+
+jpeg("./ggplot_figures/chromosome8_zoom.jpg", height = 800, width=800)
+chr8_plot2
+dev.off()
+
+## data table for genome statistics
+genome_stats <- read.csv("./data/genome_statistics_datatable.csv")
+genome_statistics_table <- nice_table(genome_stats)
+flextable::save_as_docx(genome_statistics_table, path = "./tables/genome_statistics_table.docx")
+
+## data for genome wide structural variants
+structural_variants <- read.csv("./data/genome_structural_variants_data.csv", header = T)
+structural_variants_table <- nice_table(structural_variants)
+flextable::save_as_docx(structural_variants_table, path = "./tables/structural_variants_table.docx")
