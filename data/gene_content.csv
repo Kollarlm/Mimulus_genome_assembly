@@ -1,0 +1,7 @@
+﻿Location,LMC specific gene content,SWB specific gene content,Shared gene content
+Genome,"5,347","4,797","19,245"
+chromosome 5 inversion,113,90,369
+Chromosome 8 small inversion,9,8,36
+Chromosome 8 inversion (large inversion including small inversion),177,125,613
+Chromosome 8 inversion (large inversion without small inversion),168,117,577
+Chromosome inversion 14,247,308,"1,133"

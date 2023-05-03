@@ -319,3 +319,12 @@ flextable::save_as_docx(genome_statistics_table, path = "./tables/genome_statist
 structural_variants <- read.csv("./data/genome_structural_variants_data.csv", header = T)
 structural_variants_table <- nice_table(structural_variants)
 flextable::save_as_docx(structural_variants_table, path = "./tables/structural_variants_table.docx")
+
+## Data for SNPs, SVs and inversions
+
+## Supplemental table for 
+
+Inversion_location <- read.csv("./data/Inversion_location.csv", header = T )
+Inversion_location_table <- nice_table(Inversion_location)
+flextable::save_as_docx(Inversion_location_table, path = "./tables/Inversion_location_table.docx")
+
