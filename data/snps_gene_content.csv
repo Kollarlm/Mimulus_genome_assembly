@@ -1,27 +1,26 @@
-﻿Genome wide,chromosome 5 inversion,Chromosome 8 small inversion,Chromosome 8 inversion (large inversion including small inversion),Chromosome 8 inversion (large inversion without small inversion),Chromosome inversion 14
-L1,,,,,
-nonsynonymous SNV,0,41,802,761,0
-unknown,0,0,0,0,0
-nonframeshift insertion,0,15,202,187,0
-stop gain,0,9,98,89,0
-frameshift deletion,0,11,211,200,0
-nonframeshift deletion,0,10,196,186,0
-frameshift insertion,0,12,195,183,0
-stop loss,0,4,35,31,0
-intronic,0,37,625,588,0
-UTR3,0,19,318,299,0
-UTR5,0,20,261,241,0
-splicing,0,9,146,137,0
-S1,,,,,
-nonsynonymous SNV,0,0,0,0,0
-unknown,0,0,0,0,0
-nonframeshift insertion,0,0,0,0,0
-stop gain,0,0,0,0,0
-frameshift deletion,0,0,0,0,0
-nonframeshift deletion,0,0,0,0,0
-frameshift insertion,0,0,0,0,0
-stop loss,0,0,0,0,0
-intronic,0,0,0,0,0
-UTR3,0,0,0,0,0
-UTR5,0,0,0,0,0
-splicing,0,0,0,0,0
+﻿Genome,Genome wide,Genome,chromosome 5 inversion,Chromosome 8 small inversion,Chromosome 8 inversion (large inversion including small inversion),Chromosome 8 inversion (large inversion without small inversion),Chromosome inversion 14
+S1,nonsynonymous SNV,176622,0,42,795,753,0
+S1,unknown,0,0,0,0,0,0
+S1,nonframeshift insertion,6553,0,13,186,173,0
+S1,stop gain,2787,0,8,82,74,0
+S1,frameshift deletion,7299,0,10,181,171,0
+S1,nonframeshift deletion,6359,0,11,177,166,0
+S1,frameshift insertion,7002,0,12,170,158,0
+S1,stop loss,723,0,4,32,28,0
+S1,intronic,206676,0,36,611,575,0
+S1,UTR3,24553,0,18,308,290,0
+S1,UTR5,23299,0,20,253,233,0
+S1,splicing,3986,0,9,130,121,0
+L1,nonsynonymous SNV,177538,0,44,745,701,0
+L1,unknown,0,0,0,0,0,0
+L1,nonframeshift insertion,6531,0,13,197,184,0
+L1,stop gain,2638,0,5,78,73,0
+L1,frameshift deletion,7541,0,11,171,160,0
+L1,nonframeshift deletion,6393,0,17,185,168,0
+L1,frameshift insertion,6951,0,10,169,159,0
+L1,stop loss,700,0,2,29,27,0
+L1,intronic,18329,0,36,584,548,0
+L1,UTR3,24882,0,17,291,274,0
+L1,UTR5,22595,0,16,251,235,0
+L1,splicing,4109,0,13,129,116,0
+,,,,,,,

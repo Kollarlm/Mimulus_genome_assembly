@@ -14,6 +14,8 @@ library(ggpubr)
 library(gridExtra)
 library(ggpmisc)
 
+path <- "/Users/lesliekollar/Desktop/Mimulus_genome_assembly/"
+setwd(path)
 
 ### Function for reading in .delta file 
 ### (adapted from https://jmonlong.github.io/Hippocamplus/2017/09/19/mummerplots-with-ggplot2/)
@@ -320,10 +322,23 @@ structural_variants <- read.csv("./data/genome_structural_variants_data.csv", he
 structural_variants_table <- nice_table(structural_variants)
 flextable::save_as_docx(structural_variants_table, path = "./tables/structural_variants_table.docx")
 
-## Data for SNPs, SVs and inversions
+## Data for SNPs
+snps_variants <- read.csv("./data/snps_content.csv", header = T)
+snps_variants <- snps_variants[,1:5]
+snps_variants_table <- nice_table(snps_variants)
+flextable::save_as_docx(snps_variants_table, path = "./tables/snps_variants_table.docx")
 
-## Supplemental table for 
+## data for gene content
+gene_variants <- read.csv("./data/gene_content.csv", header = T)
+gene_variants_table <- nice_table(gene_variants)
+flextable::save_as_docx(gene_variants_table, path = "./tables/gene_variants_table.docx")
 
+## data for snps_gene within genes
+snps_gene_variants <- read.csv("./data/snps_gene_content.csv", header = T)
+snps_gene_variants_table <- nice_table(snps_gene_variants)
+flextable::save_as_docx(snps_gene_variants_table, path = "./tables/snps_gene_variants_table.docx")
+
+## Supplemental table for inversion locations
 Inversion_location <- read.csv("./data/Inversion_location.csv", header = T )
 Inversion_location_table <- nice_table(Inversion_location)
 flextable::save_as_docx(Inversion_location_table, path = "./tables/Inversion_location_table.docx")
